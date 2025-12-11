@@ -2,3 +2,11 @@
 Creare un test che verifichi la seguente descrizione:
 
 👉 "La funzione getInitials restituisce le iniziali di un nome completo." */
+
+test("La funzione getInitials restituisce le iniziali di un nome completo. ",()=>{
+  function getInitials(string){
+    return string[0]
+  } 
+  expect(getInitials("Carlo")).toBe("C");
+
+})
