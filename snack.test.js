@@ -1,4 +1,4 @@
-const { getInitials , createSlug , average} = module.require("./main.js")
+const { getInitials , createSlug , average , isPalindrome , findPostById} = module.require("./main.js")
 
 /**🏆 Snack 1
 Creare un test che verifichi la seguente descrizione:
@@ -57,15 +57,10 @@ Creare un test che verifichi la seguente descrizione:
  */
 
 test("La funzione isPalindrome verifica se una stringa è un palindromo.", ()=>{
-    function isPalindrome(string){
-    const reverse = string.split("").reverse().join("")
-    if(string === reverse){
-      return true}else{
-        return false
-      }
-  }
+    
 
-  expect(isPalindrome("anna")).toBe(true)
+  expect(isPalindrome("anna")).toBeTruthy()
+  expect(isPalindrome("errore")).toBeFalsy()
 })
 
 /**🏆 Snack 6
@@ -75,19 +70,10 @@ Creare un test che verifichi la seguente descrizione:
  */
 
 test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido", ()=>{
-  function createSlug(string) {
-    if(string.trim() === ""){
-      return console.log("titolo è vuoto")
-    }else{
-      return console.log("titolo inserito")
-    }
-
-
-  }
  
-  let stringa = "ciao"
+  let stringa = ""
 
-  expect(createSlug(stringa)).toBe(console.log("titolo è vuoto"))
+  expect(() => createSlug(stringa)).toThrow("il titolo è vuoto")
 })
 
 /**🏆 Snack 7
@@ -102,11 +88,7 @@ Creare uno o più test aggiuntivi che controllino che la struttura dati passati 
 test("La funzione findPostById restituisce il post corretto dato l’array di post e l’id",()=>{
   
 
-function findPostById(array , id) {
-  const filterdArray = array.find((a) => a.id === id)
-  return filterdArray
-  
-}
+
 
 const posts = [
   {
@@ -127,4 +109,5 @@ const posts = [
 ];
 
   expect(findPostById(posts , 1 )).toBe(posts[0])
+  expect(()=> findPostById(posts , "a" )).toThrow("l'id inserito non è un numero")
 })
