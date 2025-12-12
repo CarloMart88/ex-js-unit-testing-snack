@@ -117,9 +117,31 @@ Creare un test che verifichi le seguenti descrizioni:
 Creare uno o più test aggiuntivi che controllino che la struttura dati passati sia conforme (ogni post ha le proprietà id, title e slug, viene passato un id numerico). */
 
 test("La funzione findPostById restituisce il post corretto dato l’array di post e l’id",()=>{
-  function findPostById(post ,id) {
-    
-  }
+  
 
-  expect(findPostById()).toBe()
+function findPostById(array , id) {
+  const filterdArray = array.find((a) => a.id === id)
+  return filterdArray
+  
+}
+
+const posts = [
+  {
+    id: 1,
+    title: "Introduzione a JavaScript",
+    slug: "introduzione-a-javascript"
+  },
+  {
+    id: 2,
+    title: "Come funziona il DOM",
+    slug: "come-funziona-il-dom"
+  },
+  {
+    id: 3,
+    title: "Guida agli Array Methods",
+    slug: "guida-agli-array-methods"
+  }
+];
+
+  expect(findPostById(posts , 1 )).toBe(posts[0])
 })
