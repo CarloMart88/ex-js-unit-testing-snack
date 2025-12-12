@@ -4,10 +4,14 @@ Creare un test che verifichi la seguente descrizione:
 👉 "La funzione getInitials restituisce le iniziali di un nome completo." */
 
 test("La funzione getInitials restituisce le iniziali di un nome completo. ",()=>{
-  function getInitials(string){
-    return string[0]
+    function getInitials(string){
+    const arrayString = string.split(" ")
+    const words = arrayString.map(a => a[0]).join("")
+    
+    return words
   } 
-  expect(getInitials("Carlo")).toBe("C");
+
+  expect(getInitials("Carlo Martino")).toBe("CM");
 
 })
 /*
