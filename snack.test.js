@@ -31,5 +31,17 @@ Creare un test che verifichi la seguente descrizione:
  */
 
 test("La funzione average calcola la media aritmetica di un array di numeri.", ()=>{
+  function average(array) {
+    const value = array.reduce((acc , num)=>{
+     return acc + num
+    },0 )
+    const result = value / array.length
+    return result
+  }
 
+
+
+  const number = [1 , 2 , 3]
+    
+  expect(average(number)).toBe(2)
 })
