@@ -58,6 +58,9 @@ createSlug("Questo è un test") → "questo-e-un-test" */
 test("La funzione createSlug sostituisce gli spazi con -",()=>{
   function createSlug(string) {
     
+  const noEmpty = string.replaceAll(" " , "-")
+  const noSpecialChar = noEmpty.replace("è" , "e")
+  return noSpecialChar.toLowerCase()
   }
-
+expect(createSlug("Questo è un test")).toBe("questo-e-un-test")
 })
