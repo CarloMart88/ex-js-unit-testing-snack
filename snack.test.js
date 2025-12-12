@@ -1,17 +1,13 @@
+const { getInitials , createSlug , average} = module.require("./main.js")
+
 /**🏆 Snack 1
 Creare un test che verifichi la seguente descrizione:
 
 👉 "La funzione getInitials restituisce le iniziali di un nome completo." */
 
 test("La funzione getInitials restituisce le iniziali di un nome completo. ",()=>{
-    function getInitials(string){
-    const arrayString = string.split(" ")
-    const words = arrayString.map(a => a[0]).join("")
-    
-    return words
-  } 
-
-  expect(getInitials("Carlo Martino")).toBe("CM");
+   
+ expect(getInitials("Carlo Martino")).toBe("CM");
 
 })
 /*
@@ -21,10 +17,7 @@ Creare un test che verifichi la seguente descrizione:
 👉 "La funzione createSlug restituisce una stringa in lowercase."*/
 
 test("La funzione createSlug restituisce una stringa in lowercase.",()=>{
-  function createSlug(string) {
-    return string.toLowerCase()
-    
-  }
+  
   expect(createSlug("CARLO")).toBe("carlo")
 })
 
@@ -35,15 +28,6 @@ Creare un test che verifichi la seguente descrizione:
  */
 
 test("La funzione average calcola la media aritmetica di un array di numeri.", ()=>{
-  function average(array) {
-    const value = array.reduce((acc , num)=>{
-     return acc + num
-    },0 )
-    const result = value / array.length
-    return result
-  }
-
-
 
   const number = [1 , 2 , 3]
     
@@ -60,12 +44,7 @@ Creare un test che verifichi la seguente descrizione:
 createSlug("Questo è un test") → "questo-e-un-test" */
 
 test("La funzione createSlug sostituisce gli spazi con -",()=>{
-  function createSlug(string) {
-    
-  const noEmpty = string.replaceAll(" " , "-")
-  const noSpecialChar = noEmpty.replace("è" , "e")
-  return noSpecialChar.toLowerCase()
-  }
+ 
 expect(createSlug("Questo è un test")).toBe("questo-e-un-test")
 })
 
