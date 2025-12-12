@@ -16,4 +16,10 @@ Creare un test che verifichi la seguente descrizione:
 
 👉 "La funzione createSlug restituisce una stringa in lowercase."*/
 
-test("La funzione createSlug restituisce una stringa in lowercase.",()=>{})
+test("La funzione createSlug restituisce una stringa in lowercase.",()=>{
+  function createSlug(string) {
+    return string.toLowerCase()
+    
+  }
+  expect(createSlug("CARLO")).toBe("carlo")
+})
