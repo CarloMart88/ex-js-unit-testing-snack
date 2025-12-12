@@ -74,8 +74,13 @@ Creare un test che verifichi la seguente descrizione:
  */
 
 test("La funzione isPalindrome verifica se una stringa è un palindromo.", ()=>{
-  function isPalindrome(string){
-
+    function isPalindrome(string){
+    const reverse = string.split("").reverse().join("")
+    if(string === reverse){
+      return true}else{
+        return false
+      }
   }
+
   expect(isPalindrome("anna")).toBe(true)
 })
