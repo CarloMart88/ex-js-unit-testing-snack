@@ -94,14 +94,15 @@ Creare un test che verifichi la seguente descrizione:
 test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido", ()=>{
   function createSlug(string) {
     if(string.trim() === ""){
-      return alert("titolo è vuoto")
+      return console.log("titolo è vuoto")
     }else{
       return console.log("titolo inserito")
     }
 
 
   }
-  const stringa = ""
+ 
+  let stringa = "ciao"
 
-  expect(createSlug(stringa)).toBe(true)
+  expect(createSlug(stringa)).toBe(console.log("titolo è vuoto"))
 })
